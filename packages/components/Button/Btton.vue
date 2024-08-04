@@ -1,11 +1,14 @@
 <script lang="ts" setup>
-import { computed, ref } from 'vue';
 import { throttle } from 'lodash-es';
+import { computed, ref, inject } from 'vue';
+import { BUTTON_GROUP_CTX_KEY } from './constants'
 import type { ButtonEmits, ButtonProps, ButtonInstance } from './type'
 
 defineOptions({
   name: 'GButton',
 })
+
+const buttonGroupCtx = inject(BUTTON_GROUP_CTX_KEY, void 0)
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   tag: "button",
@@ -20,11 +23,11 @@ const emits = defineEmits<ButtonEmits>();
 
 const _ref = ref<HTMLButtonElement>();
 
-const size = computed(() => props.size ? props.size : '')
+const size = computed(() => buttonGroupCtx?.size ?? props.size ?? '')
 
-const type = computed(() => props.type ? props.type : '')
+const type = computed(() => buttonGroupCtx?.type ?? props.type ?? '')
 
-const disabled = computed(() => props.disabled ? props.disabled : false)
+const disabled = computed(() => props.disabled || buttonGroupCtx?.disabled || false)
 
 const handleBtnClick = (event: MouseEvent) => emits('click', event)
 
@@ -51,7 +54,9 @@ defineExpose<ButtonInstance>({
   }" :disabled="disabled || loading ? true : void 0" :type="tag === 'button' ? nativeType : void 0"
     :autofocus="autofocus"
     @click="(event: MouseEvent) => useThrottle ? handlBtneCLickThrottle(event) : handleBtnClick(event)">
+
     <slot />
+
   </component>
 </template>
 

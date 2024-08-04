@@ -1,7 +1,8 @@
 import type { Plugin } from "vue"
-import { GButton } from '@gui/components'
+import { GButton, GButtonGroup } from '@gui/components'
 
 
 export default [
   GButton,
+  GButtonGroup
 ] as Plugin[];

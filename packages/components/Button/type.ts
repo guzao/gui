@@ -32,3 +32,17 @@ export interface ButtonInstance {
   size: ComputedRef<string>;
   type: ComputedRef<string>;
 }
+
+
+export interface ButtonGroupContext {
+  size?: ButtonSize;
+  type?: ButtonType;
+  disabled?: boolean;
+}
+
+
+export type ButtonGroupProps = {
+  size?: ButtonSize;
+  type?: ButtonType;
+  disabled?: boolean;
+}

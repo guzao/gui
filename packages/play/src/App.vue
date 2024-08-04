@@ -19,5 +19,22 @@ const click = (target: string) => console.log(target);
       Button
     </g-button>
 
+    <div></div>
+
+    <g-button-group :disabled="true">
+
+      <g-button :autofocus="true" type="success" @click="click('2')">
+        Button
+      </g-button>
+      <g-button :autofocus="true" type="success" @click="click('2')">
+        Button
+      </g-button>
+      <g-button :autofocus="true" type="success" @click="click('2')">
+        Button
+      </g-button>
+
+    </g-button-group>
+
+
   </div>
 </template>
