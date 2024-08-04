@@ -2,14 +2,19 @@
   "name": "gui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-es": "vite build --config vite.es.config.ts",
+    "build-umd": "vite build --config vite.umd.config.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@gui/components": "workspace:*"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "3.9.1"
   }
 }
