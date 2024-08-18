@@ -36,5 +36,58 @@ const click = (target: string) => console.log(target);
     </g-button-group>
 
 
+    <div class="card_box">
+
+      <GCard>
+        <template #header>
+          <div class="card-header">
+            <span>Card name</span>
+          </div>
+        </template>
+        <p v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</p>
+        <template #footer>Footer content</template>
+      </GCard>
+
+      <GCard shadow="hover">
+        <template #header>
+          <div class="card-header">
+            <span>Card name</span>
+          </div>
+        </template>
+        <p v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</p>
+        <template #footer>Footer content</template>
+      </GCard>
+
+      <GCard shadow="always">
+        <template #header>
+          <div class="card-header">
+            <span>Card name</span>
+          </div>
+        </template>
+        <p v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</p>
+        <template #footer>Footer content</template>
+      </GCard>
+
+      
+      <GCard :header="'我是header'">
+        <p v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</p>
+      </GCard>
+
+      <GCard footer="我是footer">
+        <p v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</p>
+      </GCard>
+
+    </div>
+
+
+
   </div>
 </template>
+
+<style lang="css">
+.card_box {
+  gap: 6px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+</style>

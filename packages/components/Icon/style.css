@@ -1,0 +1,16 @@
+.gui-icon {
+  --gui-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--gui-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .gui-icon--$(val) {
+    --gui-icon-color: var(--gui-color-$(val));
+  }
+}

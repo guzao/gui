@@ -7,5 +7,9 @@ export const GButtonGroup = withInstall(ButtonGroup)
 
 export default GButton
 
+export type GButtonInstance = InstanceType<typeof GButton>
+
+export type GButtonGroupInstance = InstanceType<typeof GButtonGroup>
+
 
 export * from "./type";

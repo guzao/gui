@@ -58,6 +58,10 @@
     'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
   --gui-font-weight-primary: 500;
 
+  /* shadow */
+  --gui-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, .12);
+  --gui-box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, .04), 0px 8px 20px rgba(0, 0, 0, .08);
+
   /*disabled*/
   --gui-disabled-bg-color: var(--gui-fill-color-light);
   --gui-disabled-text-color: var(--gui-text-color-placeholder);

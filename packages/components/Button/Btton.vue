@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { throttle } from 'lodash-es';
-import { computed, ref, inject } from 'vue';
+import { computed, ref, inject } from 'vue'
 import { BUTTON_GROUP_CTX_KEY } from './constants'
 import type { ButtonEmits, ButtonProps, ButtonInstance } from './type'
 
@@ -32,6 +32,7 @@ const disabled = computed(() => props.disabled || buttonGroupCtx?.disabled || fa
 const handleBtnClick = (event: MouseEvent) => emits('click', event)
 
 const handlBtneCLickThrottle = throttle(handleBtnClick, props.throttleDuration)
+
 
 defineExpose<ButtonInstance>({
   ref: _ref,

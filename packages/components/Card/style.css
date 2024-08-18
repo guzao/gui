@@ -1,0 +1,38 @@
+.gui-card {
+  --gui-card-padding: 20px;
+  --gui-card-border-radius: 4px;
+  --el-card-bg-color: var(--gui-bg-color);
+  --gui-card-border-color: var(--gui-border-color-light);
+}
+
+
+.gui-card {
+  background: var(--gui-bg-color);
+  transition: var(--gui-transition-duration);
+  border-radius: var(--gui-card-border-radius);
+  border: 1px solid var(--gui-card-border-color);
+
+  &.is-always-shadow {
+    box-shadow: var(--gui-box-shadow-light);
+  }
+
+  &:hover.is-hover-shadow {
+    box-shadow: var(--gui-box-shadow-light);
+  }
+
+  .gui-card-header {
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--gui-card-border-color);
+    padding: calc(var(--gui-card-padding) - 2px) var(--gui-card-padding);
+  }
+
+  .gui-card-body {
+    padding: var(--gui-card-padding);
+  }
+
+  .gui-card-footer {
+    box-sizing: border-box;
+    border-top: 1px solid var(--gui-card-border-color);
+    padding: calc(var(--gui-card-padding) - 2px) var(--gui-card-padding);
+  }
+}
